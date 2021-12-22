@@ -11,9 +11,13 @@
   [day]
   (str/split-lines (read-input day)))
 
+(defn parse-long
+  [s]
+  (Long/parseLong s))
+
 (defn read-input-ints
   [day]
-  (map #(Long/parseLong %) (read-input-lines day)))
+  (map parse-long (read-input-lines day)))
 
 (defn find-sum
   "Return any pair of elements from `coll` where the sum of those equals
